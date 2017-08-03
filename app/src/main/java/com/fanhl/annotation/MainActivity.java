@@ -1,6 +1,10 @@
 package com.fanhl.annotation;
 
 import android.os.Bundle;
+import android.renderscript.Int2;
+import android.support.annotation.CallSuper;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +29,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        int i = getAnInt();
+        String s = getString();
+        Int2 i2 = getInt2();
+    }
 
+    private int getAnInt() {
+        return 123;
+    }
+
+    @NonNull
+    private String getString() {
+        return "2333";
+    }
+
+    @Nullable
+    private Int2 getInt2() {
+        return null;
+    }
+}
+
+class A {
+    void a() {
+    }
+
+    @CallSuper
+    void b() {
+    }
+}
+
+class B extends A {
+    @Override
+    void a() {
+    }
+
+    @Override
+    void b() {
+        super.b();
     }
 }
