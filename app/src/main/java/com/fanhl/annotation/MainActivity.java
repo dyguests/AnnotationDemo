@@ -9,9 +9,16 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = MainActivity.class.getSimpleName();
+
+    @Cache("2333")
+    public String id;
+    @Cache
+    public String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
         int i = getAnInt();
         String s = getString();
         Int2 i2 = getInt2();
+
+        CacheProvider.bind(this);
+
+        Log.e(TAG, "id:" + id + " name:" + name);
     }
 
     private int getAnInt() {
