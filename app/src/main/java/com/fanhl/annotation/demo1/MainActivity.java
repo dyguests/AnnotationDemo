@@ -11,16 +11,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.fanhl.annotation.R;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
+
     @Cache("2333")
     public String id;
     @Cache
     public String name;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        textView = ((TextView) findViewById(R.id.text_view));
 
         int i = getAnInt();
         String s = getString();
@@ -44,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
         CacheProvider.bind(this);
 
-        Log.e(TAG, "id:" + id + " name:" + name);
+        String msg = "id:" + id + " name:" + name;
+        Log.e(TAG, msg);
+        textView.setText(msg);
     }
 
     private int getAnInt() {
