@@ -1,4 +1,4 @@
-package com.fanhl.annotation;
+package com.fanhl.annotation.demo1;
 
 import android.os.Bundle;
 import android.renderscript.Int2;
@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+
+import com.fanhl.annotation.R;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();

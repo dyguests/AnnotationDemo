@@ -1,4 +1,4 @@
-package com.fanhl.annotation;
+package com.fanhl.annotation.demo1;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
